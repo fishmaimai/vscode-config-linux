@@ -1,0 +1,76 @@
+{
+    "env": {
+        "myDefaultIncludePath": ["/root/modo_mf_system/repos/base/**"],
+        "myCompilerPath": "/usr/local/bin/gcc-7"
+      },
+    "configurations": [
+        {
+            "name": "gwm_c03",
+            "includePath": [
+                "./**",
+                "adaptor/gwm_c03/**",
+                "framework/include/**",
+                "core/**",
+                "build/repo/mdc610wulingshan/**"
+            ],
+            "defines": [
+                "USE_MTIME"
+            ],
+            "intelliSenseMode": "linux-gcc-x64",
+            "cStandard": "c99",
+            "cppStandard": "c++14",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        },
+        {
+            "name": "devcar",
+            "includePath": [
+                "adaptor/ep33l_devcar/**",
+                "framework/include/**",
+                "core/**",
+                "build/repo/devcar_with_cuda11.1/**",
+                "/root/modo_mf_system/repos/base/**"
+            ],
+            "defines": [
+                "USE_MTIME"
+            ],
+            "intelliSenseMode": "linux-gcc-x64",
+            "cStandard": "c99",
+            "cppStandard": "c++14",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        },
+        {
+            "name": "byd_ek",
+            "includePath": [
+                "adaptor/byd_ek/**",
+                "framework/include/**",
+                "core/**",
+                "build/repo/mdc610/**",
+                "/root/modo_mf_system/repos/base/**"
+            ],
+            "defines": [
+                "USE_MTIME"
+            ],
+            "intelliSenseMode": "linux-gcc-x64",
+            "cStandard": "c99",
+            "cppStandard": "c++14",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        },
+        {
+            "name": "ep33l",
+            "includePath": [
+                "adaptor/ep33l/**",
+                "framework/include/**",
+                "core/**",
+                "build/repo/qnx_with_cuda/**"
+            ],
+            "defines": [
+                "USE_MTIME"
+            ],
+            "intelliSenseMode": "linux-gcc-x64",
+            "cStandard": "c99",
+            "cppStandard": "c++14",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}
