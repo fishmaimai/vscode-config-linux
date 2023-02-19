@@ -1,0 +1,37 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "tasks": [
+                { 
+                    "taskName": "source /home/fish/work/msd/hmi_simulator/third_party/mf_mfbag/tools/common/bash/mfbag_setup.bash",
+                    "suppressTaskName": true
+                }
+            ],
+            "cwd": "${workspaceFolder}",
+            "miDebuggerPath": "c:\\mingw\\bin\\gdb.exe",
+            "additionalSOLibSearchPath": "/path/to/symbols;/another/path/to/symbols",
+            "showOutput": "always",
+            "name": "cpp: 当前工程",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/deploycdf/common/bin/mfrlaunch",
+            "args": ["file", "-m","mfrrpc://127.0.0.1:11300", "-c", "${workspaceFolder}/build/deploycdf/modules/mff/resource/launch_mff_main_and_hmi.yaml"],
+            "linux": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "/usr/bin/gdb"
+              },
+            "additionalSOLibSearchPath":"${workspaceFolder}/build/deploycdf/common/lib;${workspaceFolder}/build/deploycdf/modules/mff/lib",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "environment": [{ "name": "LD_LIBRARY_PATH", "value": "$LD_LIBRARY_PATH:${workspaceFolder}/build/deploycdf/common/lib:${workspaceFolder}/build/deploycdf/modules/mff/lib" }, 
+                            { "name": "PROJECT_ROOT_DIR", "value": "${workspaceFolder}/build/deploycdf" }, 
+                            { "name": "MFF_RESOURCE_PATH", "value": "${workspaceFolder}/build/deploycdf/modules/mff/resource" }, 
+                            { "name": "MFF_HMI_LIBRARY", "value": "${workspaceFolder}/build/deploycdf/modules/mff/lib/libhmi_core.so" }, 
+                            { "name": "MFF_MAIN_LIBRARY", "value": "${workspaceFolder}/build/deploycdf/modules/mff/lib/libmff_main_node.so" }]
+        }
+    ]
+}
