@@ -13,7 +13,6 @@
             ],
             "cwd": "${workspaceFolder}",
             "miDebuggerPath": "c:\\mingw\\bin\\gdb.exe",
-            "additionalSOLibSearchPath": "/path/to/symbols;/another/path/to/symbols",
             "showOutput": "always",
             "name": "cpp: 当前工程",
             "type": "cppdbg",
