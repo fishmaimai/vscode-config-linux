@@ -31,6 +31,27 @@
                             { "name": "MFF_RESOURCE_PATH", "value": "${workspaceFolder}/build/deploycdf/modules/mff/resource" }, 
                             { "name": "MFF_HMI_LIBRARY", "value": "${workspaceFolder}/build/deploycdf/modules/mff/lib/libhmi_core.so" }, 
                             { "name": "MFF_MAIN_LIBRARY", "value": "${workspaceFolder}/build/deploycdf/modules/mff/lib/libmff_main_node.so" }]
+        },
+        
+        {
+            "tasks": [
+                { 
+                    "taskName": "source /home/fish/work/msd/hmi_simulator/third_party/mf_mfbag/tools/common/bash/mfbag_setup.bash",
+                    "suppressTaskName": true
+                }
+            ],
+            "cwd": "${fileDirname}",
+            "showOutput": "always",
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["~/Downloads/path_record.bag"],
+            "justMyCode": true,
+            "env": {"PYTHONPATH": "${pythonpath}:/home/fish/work/msd/hmi_simulator/third_party/mf_mfbag/tools/common/lib:/home/fish/work/msd/hmi_simulator/third_party/mf_mfbag/tools/common/python:/home/fish/miniconda3/lib/python3.10/site-packages",
+                "MFRUNTIME_DYNAMIC_LIBRARY_PATH":"/home/fish/work/msd/hmi_simulator/third_party/mf_mfbag/tools/common/lib",
+                "LD_LIBRARY_PATH":"/home/fish/work/msd/hmi_simulator/third_party/mf_mfbag/tools/common/lib"}
         }
     ]
 }
