@@ -13,6 +13,23 @@
 				"isDefault": true
 			},
 			"problemMatcher": [],
+			""
+			"detail": "CMake template build task"
+		},
+		{
+			"type": "shell",
+			"label": "CMake: build",
+			"command": "bash",
+			"args": ["${workspaceFolder}/.vscode/copy_hmi.sh"],
+			"targets": [
+				"hmi_core"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			""
 			"detail": "CMake template build task"
 		}
 	]
