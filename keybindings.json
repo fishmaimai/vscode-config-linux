@@ -1,0 +1,33 @@
+// 将键绑定放在此文件中以覆盖默认值auto[]
+[
+    {
+        "key": "ctrl+shift+u",
+        "command": "-workbench.action.output.toggleOutput",
+        "when": "workbench.panel.output.active"
+    },
+    {
+        "key": "ctrl+shift+u",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "ctrl+shift+alt+u",
+        "command": "editor.action.transformToLowercase"
+    },
+    {
+        "key": "ctrl+shift+alt+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "cmake.outline.compileFile"
+    },
+    {
+        "key": "ctrl+b ctrl+r",
+        "command": "workbench.action.tasks.runTask",
+        "args": "copy_hmi"
+    }
+]
