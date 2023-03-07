@@ -1,12 +1,9 @@
 {
-    // 使用 IntelliSense 了解相关属性。 
-    // 悬停以查看现有属性的描述。
-    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
             "tasks": [
-                { 
+                {
                     "taskName": "source /home/fish/work/msd/hmi_simulator/third_party/mf_mfbag/tools/common/bash/mfbag_setup.bash",
                     "suppressTaskName": true
                 }
@@ -17,42 +14,127 @@
             "name": "cpp: 当前工程",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/deploycdf/common/bin/mfrlaunch",
-            "args": ["file", "-m","mfrrpc://127.0.0.1:11300", "-c", "${workspaceFolder}/build/deploycdf/modules/mff/resource/launch_mff_main_and_hmi.yaml"],
+            "program": "${workspaceFolder}/build/deploy/common/bin/mfrlaunch",
+            "args": [
+                "file"
+                "-m",
+                "mfrrpc://127.0.0.1:11300",
+                "-c",
+                "${workspaceFolder}/build/deploy/modules/mff/resource/launch_mff_main_and_hmi.yaml"
+            ],
             "linux": {
                 "MIMode": "gdb",
                 "miDebuggerPath": "/usr/bin/gdb"
-              },
-            "additionalSOLibSearchPath":"${workspaceFolder}/build/deploycdf/common/lib;${workspaceFolder}/build/deploycdf/modules/mff/lib",
+            },
+            "additionalSOLibSearchPath": "${workspaceFolder}/build/deploy/common/lib;${workspaceFolder}/build/deploy/modules/mff/lib",
             "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
             "justMyCode": true,
-            "environment": [{ "name": "LD_LIBRARY_PATH", "value": "$LD_LIBRARY_PATH:${workspaceFolder}/build/deploycdf/common/lib:${workspaceFolder}/build/deploycdf/modules/mff/lib" },
-                            { "name": "LD_DEBUG", "value": "libs" }, 
-                            { "name": "PROJECT_ROOT_DIR", "value": "${workspaceFolder}/build/deploycdf" }, 
-                            { "name": "MFF_RESOURCE_PATH", "value": "${workspaceFolder}/build/deploycdf/modules/mff/resource" }, 
-                            { "name": "MFF_HMI_LIBRARY", "value": "${workspaceFolder}/build/deploycdf/modules/mff/lib/libhmi_core.so" }, 
-                            { "name": "MFF_MAIN_LIBRARY", "value": "${workspaceFolder}/build/deploycdf/modules/mff/lib/libmff_main_node.so" }]
+            //"preLaunchTask":"copy_hmi",
+            "environment": [
+                {
+                    "name": "LD_LIBRARY_PATH",
+                    "value": "$LD_LIBRARY_PATH:${workspaceFolder}/build/deploy/common/lib:${workspaceFolder}/build/deploy/modules/mff/lib"
+                },
+                {
+                    "name": "LD_DEBUG",
+                    "value": "libs"
+                },
+                {
+                    "name": "PROJECT_ROOT_DIR",
+                    "value": "${workspaceFolder}/build/deploy"
+                },
+                {
+                    "name": "MFF_RESOURCE_PATH",
+                    "value": "${workspaceFolder}/build/deploy/modules/mff/resource"
+                },
+                {
+                    "name": "MFF_HMI_LIBRARY",
+                    "value": "${workspaceFolder}/build/deploy/modules/mff/lib/libhmi_core.so"
+                },
+                {
+                    "name": "MFF_MAIN_LIBRARY",
+                    "value": "${workspaceFolder}/build/deploy/modules/mff/lib/libmff_main_node.so"
+                }
+            ]
         },
-        
         {
             "tasks": [
-                { 
+                {
                     "taskName": "source /home/fish/work/msd/hmi_simulator/third_party/mf_mfbag/tools/common/bash/mfbag_setup.bash",
                     "suppressTaskName": true
                 }
             ],
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}",
+            "miDebuggerPath": "c:\\mingw\\bin\\gdb.exe",
             "showOutput": "always",
-            "name": "Python: 当前文件",
-            "type": "python",
+            "name": "debug remote idc 当前工程",
+            "type": "cppdbg",
             "request": "launch",
-            "program": "${file}",
+            "program": "${workspaceFolder}/build/deploycdf/common/bin/mfrlaunch",
+            "args": [
+                "file",
+                "-m",
+                "mfrrpc://127.0.0.1:11300",
+                "-c",
+                "${workspaceFolder}/build/deploycdf/modules/mff/resource/launch_mff_main_and_hmi.yaml"
+            ],
+            "linux": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "/usr/bin/gdb"
+            },
+            "additionalSOLibSearchPath": "${workspaceFolder}/build/deploycdf/common/lib;${workspaceFolder}/build/deploycdf/modules/mff/lib",
             "console": "integratedTerminal",
-            "args": ["~/Downloads/path_record.bag"],
+            "internalConsoleOptions": "neverOpen",
             "justMyCode": true,
-            "env": {"PYTHONPATH": "${pythonpath}:/home/fish/work/msd/hmi_simulator/third_party/mf_mfbag/tools/common/lib:/home/fish/work/msd/hmi_simulator/third_party/mf_mfbag/tools/common/python:/home/fish/miniconda3/lib/python3.10/site-packages",
-                "MFRUNTIME_DYNAMIC_LIBRARY_PATH":"/home/fish/work/msd/hmi_simulator/third_party/mf_mfbag/tools/common/lib",
-                "LD_LIBRARY_PATH":"/home/fish/work/msd/hmi_simulator/third_party/mf_mfbag/tools/common/lib"}
+            "environment": [
+                {
+                    "name": "LD_LIBRARY_PATH",
+                    "value": "$LD_LIBRARY_PATH:${workspaceFolder}/build/deploycdf/common/lib:${workspaceFolder}/build/deploycdf/modules/mff/lib"
+                },
+                {
+                    "name": "PROJECT_ROOT_DIR",
+                    "value": "${workspaceFolder}/build/deploycdf"
+                },
+                {
+                    "name": "MFF_RESOURCE_PATH",
+                    "value": "${workspaceFolder}/build/deploycdf/modules/mff/resource"
+                },
+                {
+                    "name": "MFF_HMI_LIBRARY",
+                    "value": "${workspaceFolder}/build/deploycdf/modules/mff/lib/libhmi_core.so"
+                },
+                {
+                    "name": "MFF_MAIN_LIBRARY",
+                    "value": "${workspaceFolder}/build/deploycdf/modules/mff/lib/libmff_main_node.so"
+                }
+            ]
+        },
+        {
+            "name": "C/C++: g++ 生成和调试活动文件",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++ 生成活动文件",
+            "miDebuggerPath": "gdb"
         }
     ]
 }
