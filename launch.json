@@ -1,5 +1,13 @@
 {
     "version": "0.2.0",
+    "inputs": [
+        {
+          "id": "includePaths",
+          "type": "command",
+          "command": "shellCommand.execute",
+          "args": ["python3", "${workspaceFolder}/.vscode/parse_compile_commands.py", "${workspaceFolder}/build/compile_commands.json", "${file}"]
+        }
+      ],      
     "configurations": [
         {
             "tasks": [
@@ -55,6 +63,22 @@
                 {
                     "name": "MFF_MAIN_LIBRARY",
                     "value": "${workspaceFolder}/build/deploy/modules/mff/lib/libmff_main_node.so"
+                },
+                {
+                    "name": "MFR_IP",
+                    "value": "172.17.0.1"
+                },
+                {
+                    "name": "MFR_MASTER_URI",
+                    "value": "mfrrpc://172.17.0.1:11300"
+                },
+                {
+                    "name": "LOG_CONFIG_DIR",
+                    "value": "${workspaceFolder}"
+                },
+                {
+                    "name":"LOGS_DIR",
+                    "value": "${workspaceFolder}"
                 }
             ]
         },
